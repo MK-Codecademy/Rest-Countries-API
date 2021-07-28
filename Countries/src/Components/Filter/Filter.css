@@ -1,0 +1,11 @@
+.border {
+    border: solid black 2px;
+}
+
+.filter   {
+    width: 90%;
+    background-color: red;
+    color: white;
+    margin: 2rem;
+    padding: 2rem;
+}

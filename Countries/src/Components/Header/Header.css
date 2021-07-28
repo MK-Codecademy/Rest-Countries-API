@@ -1,0 +1,11 @@
+.border {
+    border: solid black 2px;
+}
+
+.header   {
+    width: 90%;
+    background-color: black;
+    color: white;
+    margin: 2rem;
+    padding: 2rem;
+}
