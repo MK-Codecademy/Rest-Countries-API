@@ -1,0 +1,8 @@
+.border {
+    border: solid black 2px;
+}
+
+.wrapper    {
+    margin: 2rem;
+    padding: 2rem;
+}
