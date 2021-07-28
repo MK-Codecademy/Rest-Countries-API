@@ -7,4 +7,4 @@ export default function Filter(props)   {
             Hi I want to be a filter component
         </div>
     )
-}
+    }
