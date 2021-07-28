@@ -48,3 +48,5 @@ const testCountries = [
     capital: "Algiers"
   },
 ];
+
+export { testCountries };

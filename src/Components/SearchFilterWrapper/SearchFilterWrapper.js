@@ -8,8 +8,8 @@ export default function Search_Filter_wrapper(props)    {
     return(
         <div className="wrapper border">
             <p>I would like to wrap the Search and Filter please</p>
-            <Filter />
             <SearchBar />
+            <Filter />
         </div>
     )
 }
