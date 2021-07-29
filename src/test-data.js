@@ -47,6 +47,12 @@ const testCountries = [
     region: "Africa",
     capital: "Algiers"
   },
+  {
+    country: "France",
+    population:65429206,
+    region: 'Europe',
+    capital: "Paris"
+  }
 ];
 
 export { testCountries };
