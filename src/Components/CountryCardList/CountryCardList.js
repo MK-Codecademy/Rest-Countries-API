@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./CountryCardList.module.css";
-import Card from "@material-ui/core/Card";
 import Paper from '@material-ui/core/Paper';
 import CountryCard from "../CountryCard/CountryCard";
-
 
 // import test data - will be replaced when API call is functional
 import { testCountries } from "../../test-data";

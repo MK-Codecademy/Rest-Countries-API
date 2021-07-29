@@ -6,8 +6,10 @@
     width: 90%;
     background-color: black;
     color: white;
-    margin: 2rem;
-    padding: 2rem;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 50px
 }
 
 .countryTitle{
