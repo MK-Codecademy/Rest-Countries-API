@@ -1,0 +1,22 @@
+.border {
+    border: solid black 2px;
+}
+
+.card   {
+    width: 20%;
+    background-color: rgb(47, 47, 47)!important;
+    color: white!important;
+    margin-left:20px;
+    margin-right:10px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 50px;
+    
+    
+}
+
+.countryTitle{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
