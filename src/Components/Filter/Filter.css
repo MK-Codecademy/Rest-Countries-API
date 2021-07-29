@@ -3,9 +3,42 @@
 }
 
 .filter   {
-    width: 90%;
-    background-color: red;
-    color: white;
-    margin: 2rem;
-    padding: 2rem;
+  display: relative;
+  width: 90%;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.dropBtn,
+.dropList {
+  color: white;
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 5px;
+  padding: 15px;
+  width: 200px;
+  text-align: left;
+}
+
+.dropBtn,
+.dropItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropBtn {
+  margin-bottom: 2px;
+}
+
+.dropList {
+  display: none;
+  position: absolute;
+}
+
+.dropItem {
+  margin: 5px 0;
+}
+
+.open {
+  display: block;
 }
