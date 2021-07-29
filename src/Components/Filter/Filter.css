@@ -26,6 +26,15 @@
   align-items: center;
 }
 
+.dropBtn:hover {
+  cursor: pointer;
+}
+
+.dropItem:hover {
+  cursor: pointer;
+  color: lightgray;
+}
+
 .dropBtn {
   margin-bottom: 2px;
 }
