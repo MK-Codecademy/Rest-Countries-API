@@ -5,14 +5,17 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
-import flag from "../../images/flag.jpg";
+import flag from "../../images/flag.jpg"
 
 export default function CountryCard({ country }) {
   return (
     <Card className={styles.card}>
       <CardActionArea>
         <CardMedia 
-            image='../../static/images/flag.jpg' 
+            component="img"
+            alt="Contemplative Reptile"
+            height="100"
+            image={flag} 
             title="Contemplative Reptile" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
