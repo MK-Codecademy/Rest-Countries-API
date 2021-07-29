@@ -1,11 +1,38 @@
-.border {
-    border: solid black 2px;
+.header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header   {
-    width: 90%;
-    background-color: black;
-    color: white;
+.headerText {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 2rem 4rem;
+}
+
+.headerTheme {
+  display: flex;
+  align-items: flex-start;
+  margin: 2rem 4rem;
+}
+
+.headerTheme:hover {
+  cursor: pointer;
+  user-select: none;
+}
+
+.themeIcon {
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 900px) {
+  .headerText,
+  .headerTheme {
     margin: 2rem;
-    padding: 2rem;
+  }
 }
