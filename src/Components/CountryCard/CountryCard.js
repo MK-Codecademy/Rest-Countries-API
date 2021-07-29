@@ -13,13 +13,13 @@ export default function CountryCard({ country }) {
           <Typography gutterBottom variant="h5" component="h2">
             {country.country}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="white" component="p">
             {`Population: - ${country.population}`}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="white" component="p">
             {`Capital City - ${country.capital}`}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="white" component="p">
             {`Region - ${country.region}`}
           </Typography>
         </CardContent>

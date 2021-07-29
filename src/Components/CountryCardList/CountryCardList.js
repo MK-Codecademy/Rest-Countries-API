@@ -10,7 +10,7 @@ export default function CountryCardList(props) {
   return (
     <div className="wrapper ">
       <Paper elevation={3} className={styles.countyCardWarpper}>
-        <h1>{testCountries.length > 0 ? 'Countries' : ''}</h1>
+        {testCountries.length > 0 ? <h1>Countries</h1> : ''}
         {testCountries.map((country) => (
           <CountryCard country={country} />
         ))}
