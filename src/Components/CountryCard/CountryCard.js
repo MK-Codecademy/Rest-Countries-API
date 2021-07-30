@@ -14,11 +14,11 @@ export default function CountryCard({ country }) {
         <CardMedia 
             component="img"
             alt="Flag"
-            height="100"
+            height="160"
             image={flag} 
             title="Flag" 
         />
-        <CardContent>
+        <CardContent className={styles.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
             {country.country}
           </Typography>
