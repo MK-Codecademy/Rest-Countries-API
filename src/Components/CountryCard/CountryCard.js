@@ -13,10 +13,11 @@ export default function CountryCard({ country }) {
       <CardActionArea>
         <CardMedia 
             component="img"
-            alt="Contemplative Reptile"
+            alt="Flag"
             height="100"
             image={flag} 
-            title="Contemplative Reptile" />
+            title="Flag" 
+        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {country.country}
