@@ -1,8 +1,12 @@
 
 .countyCardWarpper{
     max-width: 120%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     background-color: #464a53!important;
     color: white!important;
     padding:20px
+}
+
+.grid{
+    min-width: 275px;
 }

@@ -15,7 +15,7 @@ export default function CountryCardList(props) {
           {testCountries.length > 0 ? <h1>Countries</h1> : ""}
           <Grid container spacing={3}>
           {testCountries.map((country) => (
-            <Grid item xs={3}>
+            <Grid item xs={3} className={styles.grid}>
               <CountryCard country={country} key={country.population} />
             </Grid>
           ))}
