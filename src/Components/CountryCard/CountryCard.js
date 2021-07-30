@@ -23,13 +23,13 @@ export default function CountryCard({ country }) {
             {country.country}
           </Typography>
           <Typography variant="body2" color="white" component="p">
-            {`Population: - ${country.population}`}
+            {`Population: ${country.population}`}
           </Typography>
           <Typography variant="body2" color="white" component="p">
-            {`Capital City - ${country.capital}`}
+            {`Capital City: ${country.capital}`}
           </Typography>
           <Typography variant="body2" color="white" component="p">
-            {`Region - ${country.region}`}
+            {`Region: ${country.region}`}
           </Typography>
         </CardContent>
       </CardActionArea>

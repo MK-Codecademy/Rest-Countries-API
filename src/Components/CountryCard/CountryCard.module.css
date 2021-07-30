@@ -6,18 +6,20 @@
     width: 100%;
     background-color: rgb(47, 47, 47)!important;
     color: white!important;
-    height: 400px;
+    
     /* margin-left:20px;
     margin-right:10px;
     margin-bottom: 30px; */
     margin-top: 10px;
     /* padding: 5px; */
-    
-    
 }
 
 .countryTitle{
     text-decoration: underline;
     font-weight: bold;
+}
+
+.cardActionArea{
+    height: 400px;
 }
 
