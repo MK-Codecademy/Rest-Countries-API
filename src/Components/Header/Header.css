@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  z-index: 99;
+  z-index: 99 ;
   top: 0px;
   width: 100%;
   background-color: hsl(209, 23%, 22%);

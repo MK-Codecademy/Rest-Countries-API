@@ -21,11 +21,11 @@ export default function Filter(props) {
 
   return (
     <div className="filter">
-      <div className="dropBtn" onClick={handleOpen}>
+      <div className="dropBtn dmElement corners" onClick={handleOpen}>
         <p>Filter by Region</p>
         {!open ? <BiChevronRight/> : <BiChevronDown />}
       </div>
-      <ul className={`dropList ${open && 'open'}`} id="dropList">
+      <ul className={`dropList dmElement corners ${open && 'open'}`} id="dropList">
         <li className="dropItem" id="africa" key="africa" onClick={handleSelect}>
           <p>Africa</p>
           {selected.africa ? <BiCheck /> : null}

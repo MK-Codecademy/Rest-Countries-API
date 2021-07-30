@@ -44,3 +44,19 @@ img {
   text-align: center;
   margin-top: 10rem;
 }
+
+/* dark mode styles*/
+body {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(207, 26%, 17%);
+  font-family: 'Nunito sans', sans-serif;
+}
+
+/*dark mode element*/
+.dmElement {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.corners {
+  border-radius: 5px;
+}

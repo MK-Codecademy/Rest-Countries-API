@@ -11,9 +11,6 @@
 
 .dropBtn,
 .dropList {
-  color: white;
-  background-color: hsl(209, 23%, 22%);
-  border-radius: 5px;
   padding: 15px;
   width: 200px;
   text-align: left;
