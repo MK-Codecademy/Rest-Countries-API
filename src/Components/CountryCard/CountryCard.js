@@ -10,7 +10,7 @@ import flag from "../../images/flag.jpg"
 export default function CountryCard({ country }) {
   return (
     <Card className={styles.card}>
-      <CardActionArea>
+      <CardActionArea className={styles.cardActionArea}>
         <CardMedia 
             component="img"
             alt="Flag"
