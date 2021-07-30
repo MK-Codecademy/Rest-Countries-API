@@ -16,7 +16,8 @@ export default function CountryCard({ country }) {
             alt="Flag"
             height="100"
             image={flag} 
-            title="Flag" />
+            title="Flag" 
+        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {country.country}
