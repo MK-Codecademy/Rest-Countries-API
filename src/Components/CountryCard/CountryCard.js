@@ -9,7 +9,7 @@ import flag from "../../images/flag.jpg"
 
 export default function CountryCard({ country }) {
   return (
-    <Card className={styles.card}>
+    <Card className={styles.card} className="corners dmElement">
       <CardActionArea className={styles.cardActionArea}>
         <CardMedia 
             component="img"
