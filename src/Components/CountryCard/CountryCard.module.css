@@ -17,8 +17,8 @@
 }
 
 .countryTitle{
-    /* text-decoration: underline;
-    font-weight: bold; */
+    text-decoration: underline!important;
+    font-weight: bold;
 }
 
 .cardActionArea{

@@ -11,8 +11,6 @@ import { testCountries } from "../../test-data";
 export default function CountryCardList(props) {
   return (
     <div className="wrapper ">
-      <Paper elevation={3} className={styles.countyCardWarpper}>
-          {testCountries.length > 0 ? <h1>Countries</h1> : ""}
           <Grid container spacing={3}>
           {testCountries.map((country) => (
             <Grid item xs={3} className={styles.grid}>
@@ -20,7 +18,6 @@ export default function CountryCardList(props) {
             </Grid>
           ))}
         </Grid>
-      </Paper>
     </div>
   );
 }
