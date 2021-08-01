@@ -11,6 +11,10 @@ export default function CountryCardList(props) {
   const [countries, setCountries] = useState([])
   const [filteredCountriesArray, setFilteredCountriesArray] = useState([])
   
+  /* use effect on redux filters, update filteredCountries array. if array is empty, set filtered countries to all countries.
+  use filter to return if filtered country is selected true or false. if true it returns the country to the new 
+  filteredCountriesArray.
+  */
   useEffect(() => {
     const includesRegion = (region) => {
       return filters[region.region.toLowerCase()] 
@@ -25,7 +29,7 @@ export default function CountryCardList(props) {
   },[filters])
 
   const getRequest = async () => {
-    const response = await fetchCountries("united kingdom")
+    const response = await fetchCountries()
     if(response.length > 0 ) {
       setCountries(response)
       setFilteredCountriesArray(response)
