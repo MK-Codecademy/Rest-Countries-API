@@ -1,12 +1,10 @@
 .border {
-    border: solid black 2px;
+  border: solid black 2px;
 }
 
-.filter   {
+.filter {
   display: relative;
-  width: 90%;
-  margin: 2rem;
-  padding: 2rem;
+  z-index: 1;
 }
 
 .dropBtn,

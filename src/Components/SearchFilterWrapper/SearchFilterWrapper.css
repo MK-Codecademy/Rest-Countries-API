@@ -1,8 +1,25 @@
-.border {
-    border: solid black 2px;
+.wrapper {
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.wrapper    {
-    margin: 2rem;
-    padding: 2rem;
+/* OVERRIDES #searchBox style */
+.searchBar {
+  max-width: 800px;
+  width: 40vw;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .searchBar {
+    max-width: 800px;
+    width: 80vw;
+    margin-bottom: 1rem;
+  }
 }
