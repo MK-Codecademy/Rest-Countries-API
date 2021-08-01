@@ -4,7 +4,7 @@ export const filterSlice = createSlice({
     name: 'filters',
     initialState: {
         africa: false,
-        america: false,
+        americas: false,
         asia: false,
         europe: false,
         oceania: false

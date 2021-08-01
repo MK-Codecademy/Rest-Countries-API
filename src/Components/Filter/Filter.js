@@ -8,12 +8,8 @@ export default function Filter(props) {
 
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState({ africa: false, america: false, asia: false, europe: false, oceania: false })
-  const filters = useSelector(state => state.filters)
+  const [selected, setSelected] = useState({ africa: false, americas: false, asia: false, europe: false, oceania: false, polar: false})
   
-  useEffect(() => {
-    console.log(filters)
-  },[filters])
   // open and close the drop-down
   const handleOpen = () => {
     setOpen(!open);
@@ -39,9 +35,9 @@ export default function Filter(props) {
           <p id="africa" >Africa</p>
           {selected.africa ? <BiCheck /> : null}
         </li>
-        <li className="dropItem" id="america" key="america" onClick={handleSelect}>
-          <p id="america" >America</p>
-          {selected.america ? <BiCheck /> : null}
+        <li className="dropItem" id="americas" key="americas" onClick={handleSelect}>
+          <p id="americas" >Americas</p>
+          {selected.americas ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="asia" key="asia"onClick={handleSelect} >
           <p id="asia" >Asia</p>
@@ -54,6 +50,10 @@ export default function Filter(props) {
         <li className="dropItem" id="oceania" key="oceania" onClick={handleSelect} >
           <p id="oceania" >Oceania</p>
           {selected.oceania ? <BiCheck /> : null}
+        </li>
+        <li className="dropItem" id="polar" key="polar" onClick={handleSelect} >
+          <p id="polar" >Polar</p>
+          {selected.polar ? <BiCheck /> : null}
         </li>
       </ul>
     </div>
