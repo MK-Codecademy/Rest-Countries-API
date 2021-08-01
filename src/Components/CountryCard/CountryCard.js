@@ -10,7 +10,9 @@ import flag from "../../images/flag.jpg"
 import { useSelector } from 'react-redux'
 
 
-export default function CountryCard({country}) {
+
+export default function CountryCard({ country }) {
+
 
   const dark = useSelector(state => state.darkMode.value)
 
