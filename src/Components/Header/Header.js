@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "./Header.css";
 import { FaMoon, FaRegMoon } from "react-icons/fa";
+import { toggleDarkMode } from "../../features/darkModeSlice";
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function Header() {
+  const dispatch = useDispatch()
   const [darkMode, setDarkMode] = useState(true);
 
   const handleClick = () => {
     setDarkMode(!darkMode);
+    dispatch(toggleDarkMode())
   };
 
   return (
