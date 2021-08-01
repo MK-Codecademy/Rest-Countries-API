@@ -15,12 +15,12 @@ export default function CountryCard({ country }) {
             component="img"
             alt="Flag"
             height="160"
-            image={flag} 
+            image={country.flag} 
             title="Flag" 
         />
         <CardContent className={styles.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
-            {country.country}
+            {country.name}
           </Typography>
           <Typography variant="body2" color="white" component="p">
             {`Population: ${country.population}`}
