@@ -1,8 +1,13 @@
-.border {
-    border: solid black 2px;
+.wrapper {
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.wrapper    {
-    margin: 2rem;
-    padding: 2rem;
+@media screen and (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

@@ -1,11 +1,40 @@
-.border {
-    border: solid black 2px;
+/* Container for the elements that make up the search bar */
+#searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
 }
 
-.search  {
-    width: 90%;
-    background-color: red;
-    color: white;
-    margin: 2rem;
-    padding: 2rem;
+/* Media query for smaller screen */
+@media screen and (max-width: 600px) {
+  #searchBox {
+    width: 80vw;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Container of FA's search icon */
+#searchIcon {
+  margin: 0.5rem;
+  margin-left: 1rem;
+  padding: 0.25rem;
+  display: flex;
+}
+
+/*Input box*/
+#searchInput {
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  margin: 0.5rem;
+  margin-left: 0;
+  width: 100%;
+  height: 2rem;
+}
+
+/* Make the focus outline a suitable colour */
+#searchInput:focus {
+  outline-style: solid;
+  outline-color: #fff;
 }
