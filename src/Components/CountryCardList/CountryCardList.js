@@ -6,9 +6,6 @@ import Grid from "@material-ui/core/Grid";
 import flag from "../../images/flag.jpg"
 import { fetchCountries} from "../../requests/Api"
 
-// import test data - will be replaced when API call is functional
-import { testCountries } from "../../test-data";
-
 export default function CountryCardList(props) {
 
   const getRequest = async () => {
