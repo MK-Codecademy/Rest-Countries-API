@@ -8,7 +8,7 @@ import { fetchCountries} from "../../requests/Api"
 import { testCountries } from "../../test-data";
 
 
-export default function CountryCardList({countries}) {
+export default function CountryCardList(props) {
 
   const getRequest = async () => {
     const response = await fetchCountries("united kingdom")
