@@ -16,9 +16,7 @@ export default function CountryCardList(props) {
   filteredCountriesArray.
   */
   useEffect(() => {
-    const includesRegion = (region) => {
-      return filters[region.region.toLowerCase()] 
-    }
+    const includesRegion = region => filters[region.region.toLowerCase()]
     const filteredCountries = countries.filter(includesRegion)
     if (filteredCountries.length > 0) {
       setFilteredCountriesArray(filteredCountries)
