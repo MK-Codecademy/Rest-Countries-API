@@ -5,8 +5,6 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
-
-import flag from "../../images/flag.jpg"
 import { useSelector } from 'react-redux'
 
 
@@ -20,7 +18,7 @@ export default function CountryCard({ country }) {
     <Card className={styles.card} className="corners dmElement">
       <CardActionArea className={styles.cardActionArea}>
         <CardMedia 
-            className={styles.flagSize}
+            className={dark && styles.flagSize}
             component="img"
             alt={`${country.name} flag`}
             height="160"
