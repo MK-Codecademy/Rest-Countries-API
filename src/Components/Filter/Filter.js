@@ -32,27 +32,27 @@ export default function Filter(props) {
       </div>
       <ul className={`dropList dmElement corners ${open && 'open'}`} id="dropList">
         <li className="dropItem" id="africa" key="africa" onClick={handleSelect}>
-          <p onClick={handleSelect} >Africa</p>
+          <p>Africa</p>
           {selected.africa ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="americas" key="americas" onClick={handleSelect}>
-          <p onClick={handleSelect} >Americas</p>
+          <p>Americas</p>
           {selected.americas ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="asia" key="asia"onClick={handleSelect} >
-          <p onClick={handleSelect} >Asia</p>
+          <p>Asia</p>
           {selected.asia ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="europe" key="europe" onClick={handleSelect} >
-          <p onClick={handleSelect} >Europe</p>
+          <p>Europe</p>
           {selected.europe ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="oceania" key="oceania" onClick={handleSelect} >
-          <p onClick={handleSelect} >Oceania</p>
+          <p>Oceania</p>
           {selected.oceania ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="polar" key="polar" onClick={handleSelect} >
-          <p onClick={handleSelect} >Polar</p>
+          <p>Polar</p>
           {selected.polar ? <BiCheck /> : null}
         </li>
       </ul>
