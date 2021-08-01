@@ -6,11 +6,19 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
 
+import flag from "../../images/flag.jpg"
+import { useSelector } from 'react-redux'
+
+
 export default function CountryCard({ country }) {
+
+  const dark = useSelector(state => state.darkMode.value)
+
   return (
     <Card className={styles.card} className="corners dmElement">
       <CardActionArea className={styles.cardActionArea}>
         <CardMedia 
+            className={styles.flagSize}
             component="img"
             alt={`${country.name} flag`}
             height="160"
@@ -21,6 +29,7 @@ export default function CountryCard({ country }) {
           <Typography gutterBottom variant="h5" component="h2">
             {country.name}
           </Typography>
+          <p>{dark ? 'Dark Mode' : 'Light Mode'}</p>
           <Typography variant="body2" color="white" component="p">
             {`Population: ${country.population}`}
           </Typography>
