@@ -21,7 +21,7 @@ export default function Filter(props) {
     const region = e.target.tagName === "P" ? e.target.parentNode.id : e.target.id;
     selectedCopy[region] = !selected[region];
     setSelected(selectedCopy)
-    dispatch(updateFilter(e.target.id))
+    dispatch(updateFilter(region))
   }
 
   return (
