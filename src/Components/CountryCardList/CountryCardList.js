@@ -6,31 +6,35 @@ import Grid from "@material-ui/core/Grid";
 import flag from "../../images/flag.jpg"
 import { fetchCountries} from "../../requests/Api"
 import { testCountries } from "../../test-data";
+import { useSelector } from "react-redux";
+
 
 
 
 export default function CountryCardList(props) {
 
+  const filters = useSelector(state => state.filters)
+  const [countries, setCountries] = useState([])
+  
+  useEffect(() => {
+    console.log(filters)
+  },[])
 
   const getRequest = async () => {
     const response = await fetchCountries("united kingdom")
     if(response.length > 0 ) {
       setCountries(response)
     }
-    
   }
 
-  const [countries, setCountries] = useState([])
-
+  
   useEffect(() => {
     try{
       getRequest()
     } catch (error) {
       console.log(error)
     }
-  
-  console.log(`From useEffect ${countries}`)
-  },[countries])
+  },[])
 
   return (
     <div className="wrapper body">
