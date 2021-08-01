@@ -6,7 +6,7 @@ import SearchBar from "../Searchbar/SearchBar";
 export default function Search_Filter_wrapper(props) {
   return (
     <div className="wrapper">
-      <SearchBar className="searchBar" />
+      <SearchBar />
       <Filter />
     </div>
   );

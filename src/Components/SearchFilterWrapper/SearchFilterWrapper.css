@@ -5,21 +5,9 @@
   align-items: center;
 }
 
-/* OVERRIDES #searchBox style */
-.searchBar {
-  max-width: 800px;
-  width: 40vw;
-}
-
 @media screen and (max-width: 600px) {
   .wrapper {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .searchBar {
-    max-width: 800px;
-    width: 80vw;
-    margin-bottom: 1rem;
   }
 }
