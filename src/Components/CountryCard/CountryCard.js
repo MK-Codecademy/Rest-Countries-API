@@ -5,7 +5,6 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
-import flag from "../../images/flag.jpg"
 
 export default function CountryCard({ country }) {
   return (
@@ -13,14 +12,14 @@ export default function CountryCard({ country }) {
       <CardActionArea className={styles.cardActionArea}>
         <CardMedia 
             component="img"
-            alt="Flag"
+            alt={`${country.name} flag`}
             height="160"
-            image={flag} 
+            image={country.flag} 
             title="Flag" 
         />
         <CardContent className={styles.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
-            {country.country}
+            {country.name}
           </Typography>
           <Typography variant="body2" color="white" component="p">
             {`Population: ${country.population}`}

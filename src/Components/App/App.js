@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 // import components 
@@ -8,6 +8,14 @@ import CountryCardList from '../CountryCardList/CountryCardList';
 
 
 function App() {
+  const [allCountries, setAllCountries] = useState(null);
+
+  useEffect(() => {
+    fetch('https://restcountries.eu/rest/v2/all')
+      .then(res => res.json())
+      .then(data => setAllCountries(data))
+  })
+
   return (
     <div className="container">
       <h1>Codecademy MK Chapter</h1>
@@ -15,7 +23,7 @@ function App() {
       <br />
       <Header />
       <SearchFilterWrapper />
-      <CountryCardList />
+      {allCountries && <CountryCardList countries={allCountries} />}
     </div>
   );
 }
