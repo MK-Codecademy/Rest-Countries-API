@@ -18,7 +18,7 @@ export default function CountryCard({ country }) {
         <CardMedia 
             className={styles.flagSize}
             component="img"
-            alt="Flag"
+            alt={`${country.name} flag`}
             height="160"
             image={country.flag} 
             title="Flag" 
