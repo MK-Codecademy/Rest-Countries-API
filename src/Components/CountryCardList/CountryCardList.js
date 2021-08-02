@@ -33,18 +33,20 @@ export default function CountryCardList({allCountries}) {
       setShowSpinner(true)
       displayCountries = displayCountries.filter(includesRegion);
       setShowSpinner(false)
-    }    
+      setFilteredCountriesArray(displayCountries)
+    } else {
+      setFilteredCountriesArray(allCountries)
+    }
     
     // only filter by search input if an input is present
-    if (search.value.length > 1) {
+    if (search.value) {
       setShowSpinner(true)
       displayCountries = displayCountries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
       setFilteredCountriesArray(displayCountries)
-    setTimeout(() => {
-     setShowSpinner(false)
-      
-    }, 500);
-    }
+      setTimeout(() => {
+        setShowSpinner(false)
+      }, 500);
+      }
 
     
     
