@@ -30,26 +30,22 @@ export default function CountryCardList({allCountries}) {
     // only filter by region if a region is selected
     let displayCountries = allCountries;
     if (filterCount !== 0) {
-      setShowSpinner(true)
       displayCountries = displayCountries.filter(includesRegion);
-      setShowSpinner(false)
-      setFilteredCountriesArray(displayCountries)
-    } else {
-      setFilteredCountriesArray(allCountries)
-    }
+    } 
     
     // only filter by search input if an input is present
     if (search.value) {
       setShowSpinner(true)
+
       displayCountries = displayCountries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
-      setFilteredCountriesArray(displayCountries)
+
       setTimeout(() => {
         setShowSpinner(false)
       }, 500);
-      }
+    }
 
-    
-    
+    setFilteredCountriesArray(displayCountries);
+
   },[filters, search])
 
   // <h2 className={styles.noCountries}>No countries could be found, please try another name!</h2>
