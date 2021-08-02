@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { useSelector } from "react-redux";
 import removeAccents from "../../features/removeAccents"
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Alert from '@material-ui/lab/Alert';
 
 export default function CountryCardList({allCountries}) {
   const search = useSelector(state => state.search);
@@ -46,6 +47,8 @@ export default function CountryCardList({allCountries}) {
     
   },[filters, search])
 
+  // <h2 className={styles.noCountries}>No countries could be found, please try another name!</h2>
+
 if (showSpinner) {
     return (
       <div className={styles.circular}>
@@ -59,11 +62,16 @@ if (showSpinner) {
           <Grid container spacing={3}>
           {filteredCountriesArray.length > 0 ? filteredCountriesArray.map((country) => (
             <Grid item xs={3} className={styles.grid}>
-              <CountryCard country={country} key={country.population} />
+              <CountryCard country={country} key={country.name} />
             </Grid>
-          )) : <Grid xs={12}>
+          )) : 
+            <Grid container spacing={3}>
+              <Grid item xs></Grid>
+                <Grid item xs={6}>
                 <h2 className={styles.noCountries}>No countries could be found, please try another name!</h2>
-              </Grid> 
+                </Grid> 
+              <Grid item xs></Grid>
+            </Grid>
             }
         </Grid>
     </div>
