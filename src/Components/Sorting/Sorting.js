@@ -36,10 +36,6 @@ export default function Sorting(props) {
           <p>Population</p>
           {sorting === 'population' ? <BiCheck /> : null}
         </li>
-        <li className="dropItem" id="gdp" key="gdp" onClick={handleSelect} >
-          <p>GDP</p>
-          {sorting === 'gdp' ? <BiCheck /> : null}
-        </li>
         <li className="dropItem" id="area" key="area" onClick={handleSelect} >
           <p>Area</p>
           {sorting === 'area' ? <BiCheck /> : null}
