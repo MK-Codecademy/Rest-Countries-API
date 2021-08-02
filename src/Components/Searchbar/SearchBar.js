@@ -3,14 +3,16 @@ import './SearchBar.css';
 import { FaSearch } from "react-icons/fa";
 import { useSelector, useDispatch } from 'react-redux'
 import { updateSearch } from '../../features/searchSlice';
+import removeAccents from "../../features/removeAccents"
 
 export default function SearchBar()    {
   const dispatch = useDispatch()
   const [search, setSearch] = useState('')
 
   const handleChange = (e) => {
-    setSearch(e.target.value);
-    dispatch(updateSearch(e.target.value))
+    const searchInput = removeAccents(e.target.value)
+    setSearch(searchInput);
+    dispatch(updateSearch(searchInput))
   }
   
   return (

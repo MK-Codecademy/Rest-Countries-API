@@ -4,6 +4,7 @@ import CountryCard from "../CountryCard/CountryCard";
 import Grid from "@material-ui/core/Grid";
 import { fetchCountries} from "../../requests/Api"
 import { useSelector } from "react-redux";
+import removeAccents from "../../features/removeAccents"
 
 export default function CountryCardList(props) {
   const search = useSelector(state => state.search);
@@ -28,7 +29,7 @@ export default function CountryCardList(props) {
     // if no search paramater included, display all countries
     let searchCountries = countries;
     if (search.value) {
-      searchCountries = countries.filter(country => country.name.toLowerCase().includes(search.value));
+      searchCountries = countries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
     }
 
     // if no region filter selected, include all regions
