@@ -37,13 +37,13 @@
 
 /* Make the focus outline a suitable colour */
 #searchInput:focus {
-  /* outline-style:none;
-  outline-color: rgb(54, 110, 96); */
+  outline-style:none;
+  outline-color: rgb(54, 110, 96); 
   box-shadow: 0px 0px 2px 2px rgb(54, 110, 96);
 }
 
 #searchInput:hover {
-  /* outline-style:none; */
-  /* outline-color: rgb(54, 110, 96); */
+  outline-style:none;
+   outline-color: rgb(54, 110, 96);
   box-shadow: 0px 0px 2px 2px rgb(54, 110, 96);
 }
