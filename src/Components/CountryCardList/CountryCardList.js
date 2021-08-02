@@ -39,6 +39,28 @@ export default function CountryCardList({allCountries}) {
     setFilteredCountriesArray(displayCountries)
   },[filters, search])
 
+
+  const getRequest = async () => {
+    console.log('request')
+    const response = await fetchCountries()
+    if(response.length > 0 ) {
+      setCountries(response)
+      setFilteredCountriesArray(response)
+    }
+  }
+
+  useEffect(() => {
+    try{
+      if(countries.length === 0) {
+        getRequest()
+        
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  },[])
+
+
   return (
     <div className="wrapper body">
           <Grid container spacing={3}>
