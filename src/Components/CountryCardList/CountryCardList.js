@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import { useSelector } from "react-redux";
 import removeAccents from "../../features/removeAccents"
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Alert from '@material-ui/lab/Alert';
 
 export default function CountryCardList({allCountries}) {
   const search = useSelector(state => state.search);
@@ -25,25 +24,29 @@ export default function CountryCardList({allCountries}) {
         filterCount++;
       }
     }
-
+    
     const includesRegion = country => filters[country.region.toLowerCase()];
 
     // only filter by region if a region is selected
     let displayCountries = allCountries;
     if (filterCount !== 0) {
+      setShowSpinner(true)
       displayCountries = displayCountries.filter(includesRegion);
+      setShowSpinner(false)
     }    
-    setShowSpinner(true)
+    
     // only filter by search input if an input is present
-    if (search.value) {
+    if (search.value.length > 1) {
+      setShowSpinner(true)
       displayCountries = displayCountries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
-    }
-
-    setFilteredCountriesArray(displayCountries)
+      setFilteredCountriesArray(displayCountries)
     setTimeout(() => {
      setShowSpinner(false)
       
     }, 500);
+    }
+
+    
     
   },[filters, search])
 
