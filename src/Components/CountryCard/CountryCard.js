@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Card from "@material-ui/core/Card";
 import styles from "./CountryCard.module.css";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -6,23 +6,26 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
 import { useSelector } from "react-redux";
+import { CircularProgress } from "@material-ui/core";
+import Rating from '@material-ui/lab/Rating';
+import Box from '@material-ui/core/Box';
 
 export default function CountryCard({ country }) {
   const dark = useSelector((state) => state.darkMode.value);
 
   return (
-    <Card className={styles.card} className="corners dmElement">
+    <Card className={styles.card} key={country.name} className="corners dmElement">
       <CardActionArea className={styles.cardActionArea}>
         <div className={styles.flagDiv}>
           <CardMedia
             component="img"
             alt={`${country.name} flag`}
             height="150"
-            image={country.flag}
+            src={country.flag}
             title="Flag"
           />
         </div>
-        <CardContent className={styles.cardContent}>
+        <CardContent key={country.population} className={styles.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
             {country.name}
           </Typography>
