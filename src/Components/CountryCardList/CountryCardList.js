@@ -53,7 +53,7 @@ if (showSpinner) {
       </div>
     );
   }
-  
+
   return (
     <div className="wrapper body">
           <Grid container spacing={3}>
@@ -62,7 +62,7 @@ if (showSpinner) {
               <CountryCard country={country} key={country.population} />
             </Grid>
           )) : <Grid xs={12}>
-                <h2 className={styles.noCountries}>No Countries could be found, please try another name!</h2>
+                <h2 className={styles.noCountries}>No countries could be found, please try another name!</h2>
               </Grid> 
             }
         </Grid>
