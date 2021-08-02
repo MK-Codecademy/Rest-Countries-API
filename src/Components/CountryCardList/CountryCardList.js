@@ -27,6 +27,7 @@ export default function CountryCardList(props) {
   },[filters])
 
   const getRequest = async () => {
+    console.log('request')
     const response = await fetchCountries()
     if(response.length > 0 ) {
       setCountries(response)
@@ -36,7 +37,10 @@ export default function CountryCardList(props) {
 
   useEffect(() => {
     try{
-      getRequest()
+      if(countries.length === 0) {
+        getRequest()
+        
+      }
     } catch (error) {
       console.log(error)
     }

@@ -7,8 +7,8 @@ export const filterSlice = createSlice({
         americas: false,
         asia: false,
         europe: false,
-        oceania: false
-
+        oceania: false,
+        polar: false
     },
     reducers: {
         updateFilter: (state, filter) => {

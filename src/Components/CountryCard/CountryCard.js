@@ -17,6 +17,7 @@ export default function CountryCard({ country }) {
   return (
     <Card className={styles.card} className="corners dmElement">
       <CardActionArea className={styles.cardActionArea}>
+      <div className={styles.flagDiv}>
         <CardMedia 
             className={dark && styles.flagSize}
             component="img"
@@ -25,6 +26,7 @@ export default function CountryCard({ country }) {
             image={country.flag} 
             title="Flag" 
         />
+        </div>
         <CardContent className={styles.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
             {country.name}
