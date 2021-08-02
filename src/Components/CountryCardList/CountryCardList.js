@@ -48,8 +48,8 @@ export default function CountryCardList({allCountries}) {
 
 if (showSpinner) {
     return (
-      <div>
-        <CircularProgress />
+      <div className={styles.circular}>
+        <CircularProgress size={100} />
       </div>
     );
   }
