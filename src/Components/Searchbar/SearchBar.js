@@ -24,7 +24,7 @@ export default function SearchBar()    {
     <div className="searchBar">
       <div id="searchBox" className="dmElement corners">
         <div id="searchIcon">< FaSearch/></div>
-        <input id="searchInput" className="dmElement" name="search-query" type="text" placeholder="Search for a country..." onChange={debounceChange} />
+        <input id="searchInput" className="dmElement corners" name="search-query" type="text" placeholder="Search for a country..." onChange={debounceChange} />
       </div>    
     </div>
     )
