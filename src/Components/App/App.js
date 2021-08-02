@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     fetchData('https://restcountries.eu/rest/v2/all')
       .then(res => setAllCountries(res))
-  })
+  },[])
 
   return (
     <div className="container">
