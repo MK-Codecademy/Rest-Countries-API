@@ -4,27 +4,41 @@ import CountryCard from "../CountryCard/CountryCard";
 import Grid from "@material-ui/core/Grid";
 import { fetchCountries} from "../../requests/Api"
 import { useSelector } from "react-redux";
+import removeAccents from "../../features/removeAccents"
 
 export default function CountryCardList(props) {
-
-  const filters = useSelector(state => state.filters)
-  const [countries, setCountries] = useState([])
-  const [filteredCountriesArray, setFilteredCountriesArray] = useState([])
+  const search = useSelector(state => state.search);
+  const filters = useSelector(state => state.filters);
+  const [countries, setCountries] = useState([]);
+  const [filteredCountriesArray, setFilteredCountriesArray] = useState([]);
   
-  /* use effect on redux filters, update filteredCountries array. if array is empty, set filtered countries to all countries.
-  use filter to return if filtered country is selected true or false. if true it returns the country to the new 
-  filteredCountriesArray.
+  /* use effect on redux search and then filters to update filteredCountries array. 
+  only apply the search paramaters and region filter if included, otherwise include all
   */
   useEffect(() => {
-    const includesRegion = region => filters[region.region.toLowerCase()]
-    const filteredCountries = countries.filter(includesRegion)
-    if (filteredCountries.length > 0) {
-      setFilteredCountriesArray(filteredCountries)
-    } else {
-      setFilteredCountriesArray(countries)
+    // get number of region filters included
+    let filterCount = 0;
+    for (const region in filters) {
+      if (filters[region]) {
+        filterCount++;
+      }
     }
 
-  },[filters])
+    const includesRegion = country => filters[country.region.toLowerCase()];
+
+    // only filter by region if a region is selected
+    let displayCountries = countries;
+    if (filterCount !== 0) {
+      displayCountries = displayCountries.filter(includesRegion);
+    }    
+
+    // only filter by search input if an input is present
+    if (search.value) {
+      displayCountries = displayCountries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
+    }
+
+    setFilteredCountriesArray(displayCountries)
+  },[filters, search])
 
   const getRequest = async () => {
     const response = await fetchCountries()
