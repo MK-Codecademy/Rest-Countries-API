@@ -9,13 +9,26 @@
 .cardContent{
     height: 250px;
     text-align:left;
-    height:fit-content;
+    height:fit-content!important;
+    width: 100%!important;
+    overflow: auto!important;
+    
 }
 
 .flagDiv{
     height: fit-content!important; 
-    min-height: 350px!important;
-    max-height: 550px!important; 
+    min-height: 320px!important;
+    max-height: 320px!important; 
     width:100%!important;
+    overflow: auto;
 }
 
+@media only screen and (max-width: 1300px) {
+    .flagDiv{
+        height: fit-content!important; 
+        min-height: 150px!important;
+        max-height: 150px!important; 
+        width:100%!important;
+        overflow: auto;
+    }
+}
