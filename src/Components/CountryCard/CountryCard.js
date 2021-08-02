@@ -6,6 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
 import { useSelector } from "react-redux";
+import { CircularProgress } from "@material-ui/core";
 
 export default function CountryCard({ country }) {
   const dark = useSelector((state) => state.darkMode.value);
@@ -18,7 +19,7 @@ export default function CountryCard({ country }) {
             component="img"
             alt={`${country.name} flag`}
             height="150"
-            image={country.flag}
+            src={country.flag}
             title="Flag"
           />
         </div>
