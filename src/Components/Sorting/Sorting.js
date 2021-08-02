@@ -22,7 +22,7 @@ export default function Sorting(props) {
   }
 
   return (
-    <div className="filter">
+    <div className="filter sorting">
       <div className="dropBtn dmElement corners" onClick={handleOpen}>
         <p>Sort by</p>
         {!open ? <BiChevronRight/> : <BiChevronDown />}

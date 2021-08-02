@@ -8,6 +8,11 @@
   margin: 2rem;
   padding: 2rem; */
   z-index: 1;
+  margin-left: 5px;
+}
+
+.sorting {
+  z-index: 2;
 }
 
 .dropBtn,
@@ -48,4 +53,11 @@
 
 .open {
   display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+  .filter {
+    margin-left: 0;
+  }
 }

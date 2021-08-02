@@ -8,7 +8,7 @@ export default function Search_Filter_wrapper(props) {
   return (
     <div className="wrapper">
       <SearchBar />
-      <div style={{display: "flex"}}>
+      <div className="dropDowns">
         <Sorting />
         <Filter />
       </div>
