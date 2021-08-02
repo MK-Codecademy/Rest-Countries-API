@@ -26,19 +26,18 @@ export default function CountryCardList(props) {
 
     const includesRegion = country => filters[country.region.toLowerCase()];
 
-    // if no search paramater included, display all countries
-    let searchCountries = countries;
+    // only filter by region if a region is selected
+    let displayCountries = countries;
+    if (filterCount !== 0) {
+      displayCountries = displayCountries.filter(includesRegion);
+    }    
+
+    // only filter by search input if an input is present
     if (search.value) {
-      searchCountries = countries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
+      displayCountries = displayCountries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
     }
 
-    // if no region filter selected, include all regions
-    if (filterCount === 0) {
-      setFilteredCountriesArray(searchCountries);
-    } else {
-      const filteredCountries = searchCountries.filter(includesRegion);
-      setFilteredCountriesArray(filteredCountries);
-    }    
+    setFilteredCountriesArray(displayCountries)
   },[filters, search])
 
   const getRequest = async () => {
