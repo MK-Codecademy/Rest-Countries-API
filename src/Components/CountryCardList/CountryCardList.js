@@ -42,14 +42,14 @@ export default function CountryCardList({allCountries}) {
     setTimeout(() => {
      setShowSpinner(false)
       
-    }, 1000);
+    }, 500);
     
   },[filters, search])
 
 if (showSpinner) {
     return (
       <div className={styles.circular}>
-        <CircularProgress size={100} />
+        <CircularProgress size="10rem" />
       </div>
     );
   }
