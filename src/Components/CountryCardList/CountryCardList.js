@@ -6,25 +6,39 @@ import { fetchCountries} from "../../requests/Api"
 import { useSelector } from "react-redux";
 
 export default function CountryCardList(props) {
-
-  const filters = useSelector(state => state.filters)
-  const [countries, setCountries] = useState([])
-  const [filteredCountriesArray, setFilteredCountriesArray] = useState([])
+  const search = useSelector(state => state.search);
+  const filters = useSelector(state => state.filters);
+  const [countries, setCountries] = useState([]);
+  const [filteredCountriesArray, setFilteredCountriesArray] = useState([]);
   
-  /* use effect on redux filters, update filteredCountries array. if array is empty, set filtered countries to all countries.
-  use filter to return if filtered country is selected true or false. if true it returns the country to the new 
-  filteredCountriesArray.
+  /* use effect on redux search and then filters to update filteredCountries array. 
+  only apply the search paramaters and region filter if included, otherwise include all
   */
   useEffect(() => {
-    const includesRegion = region => filters[region.region.toLowerCase()]
-    const filteredCountries = countries.filter(includesRegion)
-    if (filteredCountries.length > 0) {
-      setFilteredCountriesArray(filteredCountries)
-    } else {
-      setFilteredCountriesArray(countries)
+    // get number of region filters included
+    let filterCount = 0;
+    for (const region in filters) {
+      if (filters[region]) {
+        filterCount++;
+      }
     }
 
-  },[filters])
+    const includesRegion = country => filters[country.region.toLowerCase()];
+
+    // if no search paramater included, display all countries
+    let searchCountries = countries;
+    if (search.value) {
+      searchCountries = countries.filter(country => country.name.toLowerCase().includes(search.value));
+    }
+
+    // if no region filter selected, include all regions
+    if (filterCount === 0) {
+      setFilteredCountriesArray(searchCountries);
+    } else {
+      const filteredCountries = searchCountries.filter(includesRegion);
+      setFilteredCountriesArray(filteredCountries);
+    }    
+  },[filters, search])
 
   const getRequest = async () => {
     const response = await fetchCountries()
