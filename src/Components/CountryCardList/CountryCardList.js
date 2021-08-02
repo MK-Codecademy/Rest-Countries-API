@@ -36,7 +36,7 @@ export default function CountryCardList({allCountries}) {
     }    
     
     // only filter by search input if an input is present
-    if (search.value.length > 1) {
+    if (search.value) {
       setShowSpinner(true)
       displayCountries = displayCountries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
       setFilteredCountriesArray(displayCountries)
