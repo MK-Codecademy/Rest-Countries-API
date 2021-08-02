@@ -4,11 +4,14 @@ import CountryCard from "../CountryCard/CountryCard";
 import Grid from "@material-ui/core/Grid";
 import { useSelector } from "react-redux";
 import removeAccents from "../../features/removeAccents"
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function CountryCardList({allCountries}) {
   const search = useSelector(state => state.search);
   const filters = useSelector(state => state.filters);
   const [filteredCountriesArray, setFilteredCountriesArray] = useState(allCountries);
+  const [showSpinner, setShowSpinner] = useState(false)
+
   
   /* use effect on redux search and then filters to update filteredCountries array. 
   only apply the search paramaters and region filter if included, otherwise include all
@@ -29,25 +32,39 @@ export default function CountryCardList({allCountries}) {
     if (filterCount !== 0) {
       displayCountries = displayCountries.filter(includesRegion);
     }    
-
+    setShowSpinner(true)
     // only filter by search input if an input is present
     if (search.value) {
       displayCountries = displayCountries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
     }
 
     setFilteredCountriesArray(displayCountries)
+    setTimeout(() => {
+     setShowSpinner(false)
+      
+    }, 1000);
+    
   },[filters, search])
 
-
-
+if (showSpinner) {
+    return (
+      <div>
+        <CircularProgress />
+      </div>
+    );
+  }
+  
   return (
     <div className="wrapper body">
           <Grid container spacing={3}>
-          {filteredCountriesArray.map((country) => (
+          {filteredCountriesArray.length > 0 ? filteredCountriesArray.map((country) => (
             <Grid item xs={3} className={styles.grid}>
               <CountryCard country={country} key={country.population} />
             </Grid>
-          )) }
+          )) : <Grid xs={12}>
+                <h2 className={styles.noCountries}>No Countries could be found, please try another name!</h2>
+              </Grid> 
+            }
         </Grid>
     </div>
   );
