@@ -37,7 +37,7 @@ export default function CountryCardList({allCountries}) {
     if (search.value) {
       setShowSpinner(true)
 
-      displayCountries = displayCountries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value));
+      displayCountries = displayCountries.filter(country => removeAccents(country.name.toLowerCase()).includes(search.value) || removeAccents(country.capital.toLowerCase()).includes(search.value));
 
       setTimeout(() => {
         setShowSpinner(false)
