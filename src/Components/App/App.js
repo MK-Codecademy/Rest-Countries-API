@@ -6,14 +6,14 @@ import Header from '../Header/Header';
 import SearchFilterWrapper from '../SearchFilterWrapper/SearchFilterWrapper';
 import CountryCardList from '../CountryCardList/CountryCardList';
 
+import {fetchData} from '../../requests/fetchData'
 
 function App() {
   const [allCountries, setAllCountries] = useState(null);
 
   useEffect(() => {
-    fetch('https://restcountries.eu/rest/v2/all')
-      .then(res => res.json())
-      .then(data => setAllCountries(data))
+    fetchData('https://restcountries.eu/rest/v2/all')
+      .then(res => setAllCountries(res))
   })
 
   return (
@@ -23,7 +23,7 @@ function App() {
       <br />
       <Header />
       <SearchFilterWrapper />
-      {allCountries && <CountryCardList countries={allCountries} />}
+      {allCountries && <CountryCardList allCountries={allCountries} />}
     </div>
   );
 }

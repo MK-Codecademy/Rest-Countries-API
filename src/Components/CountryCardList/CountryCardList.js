@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import styles from "./CountryCardList.module.css";
 import CountryCard from "../CountryCard/CountryCard";
 import Grid from "@material-ui/core/Grid";
-import { fetchCountries} from "../../requests/Api"
+import { fetchCountries} from "../../requests/fetchData"
 import { useSelector } from "react-redux";
 import removeAccents from "../../features/removeAccents"
 
-export default function CountryCardList(props) {
+export default function CountryCardList({allCountries}) {
   const search = useSelector(state => state.search);
   const filters = useSelector(state => state.filters);
-  const [countries, setCountries] = useState([]);
-  const [filteredCountriesArray, setFilteredCountriesArray] = useState([]);
+  const [filteredCountriesArray, setFilteredCountriesArray] = useState(allCountries);
   
   /* use effect on redux search and then filters to update filteredCountries array. 
   only apply the search paramaters and region filter if included, otherwise include all
@@ -27,7 +26,7 @@ export default function CountryCardList(props) {
     const includesRegion = country => filters[country.region.toLowerCase()];
 
     // only filter by region if a region is selected
-    let displayCountries = countries;
+    let displayCountries = allCountries;
     if (filterCount !== 0) {
       displayCountries = displayCountries.filter(includesRegion);
     }    
@@ -39,22 +38,6 @@ export default function CountryCardList(props) {
 
     setFilteredCountriesArray(displayCountries)
   },[filters, search])
-
-  const getRequest = async () => {
-    const response = await fetchCountries()
-    if(response.length > 0 ) {
-      setCountries(response)
-      setFilteredCountriesArray(response)
-    }
-  }
-
-  useEffect(() => {
-    try{
-      getRequest()
-    } catch (error) {
-      console.log(error)
-    }
-  },[])
 
   return (
     <div className="wrapper body">
