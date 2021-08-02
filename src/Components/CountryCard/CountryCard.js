@@ -19,7 +19,6 @@ export default function CountryCard({ country }) {
       <CardActionArea className={styles.cardActionArea}>
       <div className={styles.flagDiv}>
         <CardMedia 
-            className={dark && styles.flagSize}
             component="img"
             alt={`${country.name} flag`}
             height="160"
@@ -31,7 +30,6 @@ export default function CountryCard({ country }) {
           <Typography gutterBottom variant="h5" component="h2">
             {country.name}
           </Typography>
-          <p>{dark ? 'Dark Mode' : 'Light Mode'}</p>
           <Typography variant="body2" color="white" component="p">
             {`Population: ${country.population}`}
           </Typography>

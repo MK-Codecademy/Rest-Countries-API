@@ -3,23 +3,19 @@
     height: 100%;
     min-width: 50%;
     color: white!important; 
+    /* width:300px!important */
 }
 
 .cardContent{
-    height: 200px;
+    height: 250px;
     text-align:left;
-}
-
-.flagSize{
-    /* max-height: 200px;
-    min-height: 200px; */
+    height:fit-content;
 }
 
 .flagDiv{
-    /* min-height: 250px!important;
-    max-height: 250px!important;
-    height: fit-content!important; */
-    min-height: 250px!important;
-    max-height: 250px!important;
+    height: fit-content!important; 
+    min-height: 350px!important;
+    max-height: 550px!important; 
     width:100%!important;
 }
+
