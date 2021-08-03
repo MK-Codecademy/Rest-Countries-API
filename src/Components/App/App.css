@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -49,14 +50,14 @@ img {
 body {
   color: hsl(0, 0%, 100%);
   background-color: hsl(207, 26%, 17%);
-  font-family: 'Nunito sans', sans-serif;
+  font-family: "Nunito sans", sans-serif;
 }
 
 /*dark mode element*/
 .dmElement {
-  background-color: hsl(209, 23%, 22%)!important;
+  background-color: hsl(209, 23%, 22%) !important;
 }
 
 .corners {
-  border-radius: 5px!important;
+  border-radius: 5px !important;
 }
