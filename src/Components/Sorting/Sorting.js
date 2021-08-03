@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import './Sorting.css';
 import { BiChevronDown, BiChevronRight, BiCheck } from "react-icons/bi";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
+import { updateSorting } from '../../features/sortingSlice';
+
 
 export default function Sorting(props) {
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const [open, setOpen] = useState(false);
   const [sorting, setSorting] = useState('alphabetical')
   
@@ -18,7 +20,7 @@ export default function Sorting(props) {
   const handleSelect = (e) => {
     const sorting = e.target.tagName === "P" ? e.target.parentNode.id : e.target.id;
     setSorting(sorting)
-    // dispatch(updateFilter(region))
+    dispatch(updateSorting(sorting))
   }
 
   return (

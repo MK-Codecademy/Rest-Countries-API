@@ -8,6 +8,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function CountryCardList({allCountries}) {
   const search = useSelector(state => state.search);
+  const sorting = useSelector(state => state.sorting);
   const filters = useSelector(state => state.filters);
   const [filteredCountriesArray, setFilteredCountriesArray] = useState(allCountries);
   const [showSpinner, setShowSpinner] = useState(false)
@@ -46,7 +47,7 @@ export default function CountryCardList({allCountries}) {
 
     setFilteredCountriesArray(displayCountries);
 
-  },[filters, search])
+  },[filters, search, sorting])
 
   // <h2 className={styles.noCountries}>No countries could be found, please try another name!</h2>
 
