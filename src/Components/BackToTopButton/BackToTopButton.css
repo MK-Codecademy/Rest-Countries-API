@@ -1,0 +1,25 @@
+.backToTopButton {
+  position: fixed;
+  background-color: transparent;
+  z-index: 999;
+  right: -100px;
+  bottom: 40px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  transform: translateX(-150px);
+  animation: slideLeft 1s;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(-150px);
+  }
+}
