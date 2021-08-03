@@ -18,9 +18,6 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Codecademy MK Chapter</h1>
-      <p>A lot of busy people chipping in to build a better future</p>
-      <br />
       <Header />
       <SearchFilterWrapper />
       {allCountries && <CountryCardList allCountries={allCountries} />}
