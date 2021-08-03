@@ -31,7 +31,7 @@ export default function CountryCardList({allCountries}) {
     const includesRegion = country => filters[country.region.toLowerCase()];
 
     // only filter by region if a region is selected
-    let displayCountries = allCountries;
+    let displayCountries = [...allCountries];
     if (filterCount !== 0) {
       displayCountries = displayCountries.filter(includesRegion);
     } 
