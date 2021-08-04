@@ -5,9 +5,18 @@
   align-items: center;
 }
 
+.dropDowns {
+  display: flex;
+}
+
 @media screen and (max-width: 600px) {
   .wrapper {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .dropDowns {
+    width: 100%;
+    justify-content: space-between;
   }
 }
