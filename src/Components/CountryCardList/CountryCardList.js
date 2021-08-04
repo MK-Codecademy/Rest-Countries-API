@@ -52,7 +52,6 @@ export default function CountryCardList({allCountries}) {
     }
 
     setFilteredCountriesArray(displayCountries);
-    console.log(filteredCountriesArray);
   },[filters, search, sorting])
 
   // <h2 className={styles.noCountries}>No countries could be found, please try another name!</h2>
