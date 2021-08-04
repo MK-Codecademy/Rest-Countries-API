@@ -4,9 +4,6 @@
 
 .filter {
   display: relative;
-  /* width: 90%;
-  margin: 2rem;
-  padding: 2rem; */
   z-index: 1;
   margin-left: 5px;
 }

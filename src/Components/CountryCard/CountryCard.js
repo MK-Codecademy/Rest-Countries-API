@@ -30,7 +30,7 @@ export default function CountryCard({ country }) {
             {country.name}
           </Typography>
           <Typography variant="body2" color="white" component="p">
-            {`Population: ${country.population}`}
+            {`Population: ${(country.population).toLocaleString()}`}
           </Typography>
           <Typography variant="body2" color="white" component="p">
             {`Capital City: ${country.capital}`}
