@@ -4,8 +4,8 @@
   z-index: 999;
   right: -100px;
   bottom: 40px;
-  font-size: 35px;
-  color: white;
+  font-size: 40px;
+  color: hsl(0, 0%, 52%);
   cursor: pointer;
   transform: translateX(-150px);
   animation: slideLeft 1s;
