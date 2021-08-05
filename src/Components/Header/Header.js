@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import "./Header.css";
 import { FaMoon, FaRegMoon } from "react-icons/fa";
 import { toggleDarkMode } from "../../features/darkModeSlice";
@@ -18,7 +19,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <h1 className="headerText">Where in the world?</h1>
+      <h1 className="headerText"><Link to="/">Where in the world?</Link></h1>
       <div className="headerTheme" onClick={handleClick}>
         <div className="themeIcon">{darkMode ? <FaMoon /> : <FaRegMoon />}</div>
         <p className="themeText">Dark Mode</p>
