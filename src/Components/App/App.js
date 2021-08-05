@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 import "./App.css";
 
 // import components
@@ -8,6 +14,7 @@ import CountryCardList from "../CountryCardList/CountryCardList";
 
 import { fetchData } from "../../requests/fetchData";
 import BackToTopButton from "../BackToTopButton/BackToTopButton";
+import CountryDetailPage from "../CountryDetailPage/CountryDetailPage";
 
 function App() {
   const [allCountries, setAllCountries] = useState(null);
@@ -19,12 +26,24 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      <Header />
-      <BackToTopButton />
-      <SearchFilterWrapper />
-      {allCountries && <CountryCardList allCountries={allCountries} />}
-    </div>
+    <Router>
+      <div className="container">
+        <Header />
+        <Switch>
+          <Route path="/" exact>
+            <div>
+              <BackToTopButton />
+              <SearchFilterWrapper />
+              {allCountries && <CountryCardList allCountries={allCountries} />}
+            </div>
+          </Route>
+          <Route exact path="/:country">
+            <CountryDetailPage /> 
+          </Route>
+          
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
