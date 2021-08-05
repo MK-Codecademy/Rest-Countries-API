@@ -3,6 +3,8 @@ import "./SearchFilterWrapper.css";
 import Filter from "../Filter/Filter";
 import Sorting from "../Sorting/Sorting";
 import SearchBar from "../Searchbar/SearchBar";
+import ResetFilters from "../ResetFilters/ResetFilters";
+
 
 export default function Search_Filter_wrapper(props) {
   return (
@@ -11,6 +13,7 @@ export default function Search_Filter_wrapper(props) {
       <div className="dropDowns">
         <Sorting />
         <Filter />
+        <ResetFilters />
       </div>
     </div>
   );
