@@ -5,10 +5,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateFilter } from '../../features/filtersSlice';
 
 export default function Filter(props) {
-
+  const filters = useSelector(state => state.filters);
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState({ africa: false, americas: false, asia: false, europe: false, oceania: false, polar: false})
   
   // open and close the drop-down
   const handleOpen = () => {
@@ -17,10 +16,7 @@ export default function Filter(props) {
 
   // toggle if region filter is selected
   const handleSelect = (e) => {
-    const selectedCopy = { ...selected };
     const region = e.target.tagName === "P" ? e.target.parentNode.id : e.target.id;
-    selectedCopy[region] = !selected[region];
-    setSelected(selectedCopy)
     dispatch(updateFilter(region))
   }
 
@@ -33,27 +29,27 @@ export default function Filter(props) {
       <ul className={`dropList dmElement corners ${open && 'open'}`} id="dropList">
         <li className="dropItem" id="africa" key="africa" onClick={handleSelect}>
           <p>Africa</p>
-          {selected.africa ? <BiCheck /> : null}
+          {filters.africa ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="americas" key="americas" onClick={handleSelect}>
           <p>Americas</p>
-          {selected.americas ? <BiCheck /> : null}
+          {filters.americas ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="asia" key="asia"onClick={handleSelect} >
           <p>Asia</p>
-          {selected.asia ? <BiCheck /> : null}
+          {filters.asia ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="europe" key="europe" onClick={handleSelect} >
           <p>Europe</p>
-          {selected.europe ? <BiCheck /> : null}
+          {filters.europe ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="oceania" key="oceania" onClick={handleSelect} >
           <p>Oceania</p>
-          {selected.oceania ? <BiCheck /> : null}
+          {filters.oceania ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="polar" key="polar" onClick={handleSelect} >
           <p>Polar</p>
-          {selected.polar ? <BiCheck /> : null}
+          {filters.polar ? <BiCheck /> : null}
         </li>
       </ul>
     </div>

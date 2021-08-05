@@ -9,12 +9,11 @@ import debounce from 'lodash.debounce';
 
 export default function SearchBar()    {
   const dispatch = useDispatch()
-  const [search, setSearch] = useState('')
+  const search = useSelector(state => state.search)
 
   const handleChange = (e) => {
     const searchInput = removeAccents(e.target.value)
-    // setSearch(searchInput);
-    dispatch(updateSearch(searchInput))
+    dispatch(updateSearch(searchInput.toLowerCase()))
   }
   
   // delay updating state if user still typing (half second delay)
@@ -24,7 +23,13 @@ export default function SearchBar()    {
     <div className="searchBar">
       <div id="searchBox" className="dmElement corners">
         <div id="searchIcon">< FaSearch/></div>
-        <input id="searchInput" className="dmElement corners" name="search-query" type="text" placeholder="Search for a country..." onChange={debounceChange} />
+        <input 
+          id="searchInput" 
+          className="dmElement corners" 
+          name="search-query" 
+          type="text" 
+          placeholder="Search for a country..." 
+          onChange={debounceChange} />
       </div>    
     </div>
     )

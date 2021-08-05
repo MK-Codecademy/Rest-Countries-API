@@ -9,7 +9,7 @@ export default function Sorting(props) {
 
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false);
-  const [sorting, setSorting] = useState('alphabetical')
+  const sorting = useSelector(state => state.sorting);
   
   // open and close the drop-down
   const handleOpen = () => {
@@ -19,7 +19,6 @@ export default function Sorting(props) {
   // toggle if region filter is selected
   const handleSelect = (e) => {
     const sorting = e.target.tagName === "P" ? e.target.parentNode.id : e.target.id;
-    setSorting(sorting)
     dispatch(updateSorting(sorting))
   }
 
@@ -32,15 +31,15 @@ export default function Sorting(props) {
       <ul className={`dropList dmElement corners ${open && 'open'}`} id="dropList">
         <li className="dropItem" id="alphabetical" key=" alphabetical" onClick={handleSelect}>
           <p>Albabetical</p>
-          {sorting === 'alphabetical' ? <BiCheck /> : null}
+          {sorting.value === 'alphabetical' ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="population" key="population" onClick={handleSelect}>
           <p>Population</p>
-          {sorting === 'population' ? <BiCheck /> : null}
+          {sorting.value === 'population' ? <BiCheck /> : null}
         </li>
         <li className="dropItem" id="area" key="area" onClick={handleSelect} >
           <p>Area</p>
-          {sorting === 'area' ? <BiCheck /> : null}
+          {sorting.value === 'area' ? <BiCheck /> : null}
         </li>
       </ul>
     </div>
