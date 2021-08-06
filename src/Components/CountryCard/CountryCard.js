@@ -6,10 +6,6 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
-import { useSelector } from "react-redux";
-import { CircularProgress } from "@material-ui/core";
-import Rating from '@material-ui/lab/Rating';
-import Box from '@material-ui/core/Box';
 
 export default function CountryCard({ country }) {
 

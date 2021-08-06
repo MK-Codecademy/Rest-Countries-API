@@ -15,6 +15,7 @@ import CountryCardList from "../CountryCardList/CountryCardList";
 import { fetchData } from "../../requests/fetchData";
 import BackToTopButton from "../BackToTopButton/BackToTopButton";
 import CountryDetailPage from "../CountryDetailPage/CountryDetailPage";
+import Example from "../../Examples/example"
 
 function App() {
   const [allCountries, setAllCountries] = useState(null);
@@ -40,7 +41,9 @@ function App() {
           <Route exact path="/:country">
             <CountryDetailPage /> 
           </Route>
-          
+          <Route exact path="/example/example">
+            <Example /> 
+          </Route>
         </Switch>
       </div>
     </Router>
