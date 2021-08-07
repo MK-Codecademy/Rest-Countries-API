@@ -52,7 +52,6 @@
   display: block;
 }
 
-
 @media screen and (max-width: 600px) {
   .filter {
     margin-left: 0;

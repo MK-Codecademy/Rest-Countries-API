@@ -1,0 +1,37 @@
+.container {
+  width: 100vw;
+  height: 10vh;
+}
+
+.button {
+  padding: 0.7rem 2rem;
+  border-radius: 5px;
+  border: none;
+  float: left;
+  margin-left: 4rem;
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+  box-shadow: 0px 0px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.btnArrow {
+  margin-right: 0.5rem;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+/* MEDIA QUERY TO MATCH HEADER RESIZE */
+@media screen and (max-width: 900px) {
+  .button {
+    margin-left: 2.5rem;
+  }
+}
