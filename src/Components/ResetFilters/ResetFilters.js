@@ -17,14 +17,13 @@ function ResetFilters() {
     for (const country in filters) {
       if (filters[country]) {
         dispatch(updateFilter(country))
-        
       }
     }    
     document.getElementById('searchInput').value = '';
   }
 
   return (
-    <div className="filter dropBtn dmElement corners" onClick={handleClick} id="resetBtn">
+    <div className="dropDown dropBtn dmElement corners" onClick={handleClick} id="resetBtn">
       <p>Reset</p>
     </div>
   );

@@ -2,7 +2,7 @@
   border: solid black 2px;
 }
 
-.filter {
+.dropDown {
   display: relative;
   z-index: 1;
   margin-left: 5px;
@@ -54,7 +54,7 @@
 
 
 @media screen and (max-width: 600px) {
-  .filter {
+  .dropDown {
     margin-left: 0;
   }
 }
