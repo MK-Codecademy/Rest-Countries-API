@@ -6,7 +6,7 @@ function BackButton() {
   const history = useHistory();
 
   const handleRoute = () => {
-    history.push("/");
+    history.push("/Rest-Countries-API/");
   };
 
   return (
