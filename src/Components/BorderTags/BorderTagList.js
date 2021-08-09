@@ -4,7 +4,6 @@ import "./BorderTagList.css";
 
 
 function BorderTagList({borders}) {
-  useEffect(() => console.log(borders))
 
   return (
     <div className="borderTagContainer">
