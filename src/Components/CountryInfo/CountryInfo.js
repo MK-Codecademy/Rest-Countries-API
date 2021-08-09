@@ -11,7 +11,7 @@ function CountryInfo({countryData}) {
 
   return (
     <div className="countryInfo">
-      <h2>{countryData.name}</h2>
+      <h1>{countryData.name}</h1>
       <div>
         <p><strong>Native Name</strong>: {countryData.nativeName}</p>
         <p><strong>Population</strong>: {countryData.population.toLocaleString()}</p>
