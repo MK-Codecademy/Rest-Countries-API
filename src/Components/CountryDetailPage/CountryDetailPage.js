@@ -17,15 +17,15 @@ function CountryDetailPage() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    fetchData(`https://restcountries.eu/rest/v2/alpha/${country}`).then((res) => {
-      setCountryData(res);
-      return res
-    }).then(res => {
-      fetchData(`https://restcountries.eu/rest/v2/alpha?codes=${res.borders.join(';')}`).then((res) => {
-        if (res.ok) {
-          setBorders(res);
-        }
-      })
+    fetchData(`https://restcountries.eu/rest/v2/alpha/${country}`).then((data) => {
+      setCountryData(data);
+      return res.borders
+    }).then(borderCodes => {
+      if (borderCodes.length > 0) {
+        fetchData(`https://restcountries.eu/rest/v2/alpha?codes=${borders.join(';')}`).then((bordersData) => {
+          setBorders(bordersData);
+        })
+      }
     }).then(() => {
       setLoaded(true)
     })
