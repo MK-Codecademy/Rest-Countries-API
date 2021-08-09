@@ -36,11 +36,12 @@ function CountryDetailPage() {
     <div className="container">
       <BackButton />
       {loaded && 
+        <div>  
           <Flags countryData={countryData} />
           <CountryInfo countryData={countryData} />
           <BorderTagList borders={borders} />
         </div>
-      )}
+      }
     </div>
   );
 }
