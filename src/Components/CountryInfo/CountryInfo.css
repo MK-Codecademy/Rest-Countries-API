@@ -1,0 +1,18 @@
+.countryInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 20px;
+  text-align: left;
+  width: fit-content; /*can change when other components ready*/
+  margin: 0 auto; /*can change when other components ready*/
+}
+
+.countryInfo h2 {
+  grid-column: 1 / span 2;
+  font-weight: bold;
+}
+
+.countryInfo p {
+  margin-bottom: 5px;
+}
