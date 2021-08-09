@@ -1,0 +1,11 @@
+.borderTagList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.borderTag {
+  width: fit-content;
+  padding: 5px 15px;
+  margin: 5px;
+}
