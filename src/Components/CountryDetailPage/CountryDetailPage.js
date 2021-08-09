@@ -19,7 +19,7 @@ function CountryDetailPage() {
   useEffect(() => {
     fetchData(`https://restcountries.eu/rest/v2/alpha/${country}`).then((data) => {
       setCountryData(data);
-      return res.borders
+      return data.borders
     }).then(borderCodes => {
       if (borderCodes.length > 0) {
         fetchData(`https://restcountries.eu/rest/v2/alpha?codes=${borders.join(';')}`).then((bordersData) => {
