@@ -31,14 +31,14 @@ function App() {
       <div className="container">
         <Header />
         <Switch>
-          <Route path="/" exact>
+          <Route path="/Rest-Countries-API/" exact>
             <div>
               <BackToTopButton />
               <SearchFilterWrapper />
               {allCountries && <CountryCardList allCountries={allCountries} />}
             </div>
           </Route>
-          <Route exact path="/:country">
+          <Route exact path="/Rest-Countries-API/:country">
             <CountryDetailPage /> 
           </Route>
           <Route exact path="/example/example">

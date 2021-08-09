@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <h1 className="headerText"><Link to="/">Where in the world?</Link></h1>
+      <h1 className="headerText"><Link to="/Rest-Countries-API/">Where in the world?</Link></h1>
       <div className="headerTheme" onClick={handleClick}>
         <div className="themeIcon">{darkMode ? <FaMoon /> : <FaRegMoon />}</div>
         <p className="themeText">Dark Mode</p>

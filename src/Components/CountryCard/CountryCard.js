@@ -10,7 +10,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 export default function CountryCard({ country }) {
 
   return (
-    <Link to={`/${country.alpha2Code}`}>
+    <Link to={`/Rest-Countries-APi/${country.alpha2Code}`}>
       <Card className={styles.card} key={country.name} className="corners dmElement">
         <CardActionArea className={styles.cardActionArea}>
           <div className={styles.flagDiv}>
