@@ -4,12 +4,12 @@ import "./BorderTagList.css";
 
 
 function BorderTagList({borders}) {
-  
+
   return (
     <div className="borderTagContainer">
       <p className="title">Border Countries: </p>
       <div className="borderTagList">
-        {borders.map(country => <BorderTag borderCountry={country} />)}
+        {borders !== undefined && borders.map(country => <BorderTag borderCountry={country} />)}
       </div>
     </div>
   );
