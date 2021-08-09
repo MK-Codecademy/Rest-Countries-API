@@ -4,12 +4,13 @@ import "./BorderTagList.css";
 
 
 function BorderTagList({borders}) {
-  
+  useEffect(() => console.log(borders))
+
   return (
     <div className="borderTagContainer">
       <p className="title">Border Countries: </p>
       <div className="borderTagList">
-        {borders.length > 0 && borders.map(country => <BorderTag borderCountry={country} />)}
+        {borders !== undefined && borders.map(country => <BorderTag borderCountry={country} />)}
       </div>
     </div>
   );

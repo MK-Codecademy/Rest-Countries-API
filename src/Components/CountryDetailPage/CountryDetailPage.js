@@ -13,19 +13,23 @@ import BorderTagList from "../BorderTags/BorderTagList";
 function CountryDetailPage() {
   const [countryData, setCountryData] = useState();
   const { country } = useParams(); // this is the alpha2Code property from the country data
-  const [borders, setBorders] = useState();
+  const [borders, setBorders] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
 
   useEffect(() => {
     fetchData(`https://restcountries.eu/rest/v2/alpha/${country}`).then((res) => {
       setCountryData(res);
-
-      if (res.borders.length > 0) {
-        fetchData(`https://restcountries.eu/rest/v2/alpha?codes=${res.borders.join(';')}`).then((res) => {
+      return res
+    }).then(res => {
+      fetchData(`https://restcountries.eu/rest/v2/alpha?codes=${res.borders.join(';')}`).then((res) => {
+        if (res.ok) {
           setBorders(res);
-        })
-      }
-    });
+        }
+      })
+    }).then(() => {
+      setLoaded(true)
+    })
   }, [country]);
 
 
@@ -33,7 +37,7 @@ function CountryDetailPage() {
   return (
     <div className="container">
       <BackButton />
-      {borders && 
+      {loaded && 
         <div> 
           <CountryInfo countryData={countryData} />
           <BorderTagList borders={borders} />
