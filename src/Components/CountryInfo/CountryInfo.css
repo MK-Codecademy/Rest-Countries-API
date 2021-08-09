@@ -1,0 +1,35 @@
+.countryInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 20px;
+  text-align: left;
+  width: fit-content; /*can change when other components ready*/
+  margin: 0 auto; /*can change when other components ready*/
+}
+
+.countryInfo h1 {
+  grid-column: 1 / span 2;
+  font-weight: bold;
+}
+
+.countryInfo p {
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .countryInfo {
+    grid-template-columns: 90vw;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 30px;
+
+  }
+
+  .countryInfo h1 {
+    grid-column: 1;
+  }
+
+  .countryInfo p {
+    margin-bottom: 10px;
+  }
+}

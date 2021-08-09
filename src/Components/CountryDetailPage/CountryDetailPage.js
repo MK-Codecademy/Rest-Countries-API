@@ -6,6 +6,7 @@ import "./CountryDetailPage.css";
 
 import { fetchData } from "../../requests/fetchData";
 import BackButton from "../BackButton/BackButton";
+import CountryInfo from "../CountryInfo/CountryInfo";
 
 function CountryDetailPage() {
   const [countryData, setCountryData] = useState();
@@ -21,7 +22,7 @@ function CountryDetailPage() {
   return (
     <div className="container">
       <BackButton />
-      {countryData && <p>{countryData.name} details page</p>}
+      {countryData && <CountryInfo countryData={countryData} />}
     </div>
   );
 }
