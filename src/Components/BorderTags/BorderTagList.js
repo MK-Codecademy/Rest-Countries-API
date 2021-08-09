@@ -9,7 +9,7 @@ function BorderTagList({borders}) {
     <div className="borderTagContainer">
       <p className="title">Border Countries: </p>
       <div className="borderTagList">
-        {borders.map(country => <BorderTag borderCountry={country} />)}
+        {borders.length > 0 && borders.map(country => <BorderTag borderCountry={country} />)}
       </div>
     </div>
   );

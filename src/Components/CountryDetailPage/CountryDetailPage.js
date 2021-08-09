@@ -20,11 +20,13 @@ function CountryDetailPage() {
     fetchData(`https://restcountries.eu/rest/v2/alpha/${country}`).then((res) => {
       setCountryData(res);
 
-      fetchData(`https://restcountries.eu/rest/v2/alpha?codes=${res.borders.join(';')}`).then((res) => {
-        setBorders(res);
-      })
+      if (res.borders.length > 0) {
+        fetchData(`https://restcountries.eu/rest/v2/alpha?codes=${res.borders.join(';')}`).then((res) => {
+          setBorders(res);
+        })
+      }
     });
-  }, []);
+  }, [country]);
 
 
   // as countryData is aquired async, we have to wait until it has finished fetching before we try to render the details. This is why we only render the <p> tag if countryData exists
