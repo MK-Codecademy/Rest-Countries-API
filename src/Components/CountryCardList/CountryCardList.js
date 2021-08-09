@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./CountryCardList.module.css";
 import CountryCard from "../CountryCard/CountryCard";
 import Grid from "@material-ui/core/Grid";
@@ -52,7 +52,7 @@ export default function CountryCardList({allCountries}) {
     }
 
     setFilteredCountriesArray(displayCountries);
-  },[filters, search, sorting])
+  },[filters, search, sorting, allCountries])
 
   // <h2 className={styles.noCountries}>No countries could be found, please try another name!</h2>
 

@@ -1,7 +1,5 @@
-import React, {useEffect, useState} from 'react';
 import { BiCheck } from "react-icons/bi";
 import { useDispatch } from 'react-redux'
-import { updateFilter } from '../../features/filtersSlice';
 
 export default function Filter({option}) {
   const dispatch = useDispatch();
@@ -13,7 +11,7 @@ export default function Filter({option}) {
   }
 
   return (
-    <li className="dropItem" id={option.id} key={option.key} onClick={handleSelect}>
+    <li className="dropItem" id={option.id} onClick={handleSelect}>
       <p>{option.name}</p>
       {option.check ? <BiCheck /> : null}
     </li>

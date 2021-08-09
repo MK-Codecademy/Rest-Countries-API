@@ -1,8 +1,7 @@
-import React from "react";
 import "./SearchFilterWrapper.css";
 import SearchBar from "../Searchbar/SearchBar";
 import ResetFilters from "../ResetFilters/ResetFilters";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector} from 'react-redux'
 import { updateSorting } from '../../features/sortingSlice';
 import { updateFilter } from '../../features/filtersSlice';
 import DropDown from '../DropDown/DropDown';

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import "./ResetFilters.css";
 
 import { useSelector, useDispatch } from 'react-redux'

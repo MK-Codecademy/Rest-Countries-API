@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
 import './SearchBar.css';
 import { FaSearch } from "react-icons/fa";
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { updateSearch } from '../../features/searchSlice';
 import removeAccents from "../../features/removeAccents"
 
@@ -9,7 +8,6 @@ import debounce from 'lodash.debounce';
 
 export default function SearchBar()    {
   const dispatch = useDispatch()
-  const search = useSelector(state => state.search)
 
   const handleChange = (e) => {
     const searchInput = removeAccents(e.target.value)

@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import {useState} from 'react';
 import './DropDown.css';
-import { BiChevronDown, BiChevronRight, BiCheck } from "react-icons/bi";
+import { BiChevronDown, BiChevronRight } from "react-icons/bi";
 import DropDownOption from './DropDownOption'
 
 export default function DropDown({title, options}) {
@@ -18,7 +18,7 @@ export default function DropDown({title, options}) {
         {!open ? <BiChevronRight/> : <BiChevronDown />}
       </div>
       <ul className={`dropList dmElement corners ${open && 'open'}`} id="dropList">
-        {options.map(option => <DropDownOption option={option} />)}
+        {options.map(option => <DropDownOption option={option} key={option.key} />)}
       </ul>
     </div>
   )
