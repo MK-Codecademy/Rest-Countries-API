@@ -5,7 +5,8 @@
 }
 
 .infoAndBorderWrapper {
-  padding: 0 100px;
+  padding: 0 2vw;
+  width: 50vw;
 }
 
 @media screen and (max-width: 600px) {
