@@ -1,11 +1,10 @@
 .countryInfo {
+  width: 5  0vw;
   display: grid;
-  grid-template-columns: repeat(2, 300px);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   row-gap: 20px;
   text-align: left;
-  width: fit-content; /*can change when other components ready*/
-  margin: 0 auto; /*can change when other components ready*/
 }
 
 .countryInfo h1 {
@@ -19,10 +18,10 @@
 
 @media screen and (max-width: 600px) {
   .countryInfo {
+    margin-top: 50px;
     grid-template-columns: 90vw;
     grid-template-rows: repeat(3, auto);
     row-gap: 30px;
-
   }
 
   .countryInfo h1 {

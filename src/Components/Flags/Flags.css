@@ -1,7 +1,9 @@
-
 .flagWrapper {
-  margin: 3rem;
+  width: 35vw;
 }
 
-.flagImage {
+@media screen and (max-width: 600px) {
+  .flagWrapper {
+    width: 100%;
+  }
 }

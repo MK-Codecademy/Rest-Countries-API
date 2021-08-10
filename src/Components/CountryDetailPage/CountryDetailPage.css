@@ -1,0 +1,22 @@
+.countryDetailWrapper {
+  margin: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoAndBorderWrapper {
+  padding: 0 2vw;
+  width: 50vw;
+}
+
+@media screen and (max-width: 600px) {
+  .countryDetailWrapper {
+    width: 85%;
+    margin: 0 auto; 
+    flex-direction: column;
+  }
+
+  .infoAndBorderWrapper {
+    padding: 0;
+  }
+}

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import "./CountryDetailPage.css";
+import { useDispatch } from 'react-redux'
+import { updateSearch } from '../../features/searchSlice';
 
 // import components
 
@@ -11,12 +13,16 @@ import BorderTagList from "../BorderTags/BorderTagList";
 import Flags from "../Flags/Flags";
 
 function CountryDetailPage() {
+  const dispatch = useDispatch();
   const [countryData, setCountryData] = useState();
   const { country } = useParams(); // this is the alpha2Code property from the country data
   const [borders, setBorders] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    // reset search state so when user goes back, they get all countries
+    dispatch(updateSearch(''));
+
     fetchData(`https://restcountries.eu/rest/v2/alpha/${country}`).then((res) => {
       setCountryData(res);
       return res.borders
@@ -36,10 +42,12 @@ function CountryDetailPage() {
     <div className="container">
       <BackButton />
       {loaded && 
-        <div>  
+        <div className="countryDetailWrapper">  
           <Flags countryData={countryData} />
-          <CountryInfo countryData={countryData} />
-          <BorderTagList borders={borders} />
+          <div className="infoAndBorderWrapper">
+            <CountryInfo countryData={countryData} />
+            <BorderTagList borders={borders} />
+          </div>
         </div>
       }
     </div>
