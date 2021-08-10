@@ -1,8 +1,7 @@
 .borderTagContainer {
   display: flex;
   justify-content: flex-start;
-  width: 600px;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
 .borderTagContainer .title {
@@ -21,4 +20,14 @@
   width: fit-content;
   padding: 5px 15px;
   margin: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .borderTagContainer {
+    flex-direction: column;
+  }
+
+  .borderTagContainer .title {
+    margin-bottom: 15px;
+  }
 }
