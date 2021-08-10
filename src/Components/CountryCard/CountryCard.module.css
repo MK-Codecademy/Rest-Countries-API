@@ -1,43 +1,55 @@
-
 .cardActionArea{
-    height: 100%;
-    min-width: 50%;
-    color: white!important; 
-    /* width:300px!important */
+  height: 440px !important;
+  color: white!important; 
 }
 
 .cardContent{
-    height: 250px;
-    text-align:left;
-    height:fit-content!important;
-    width: 100%!important;
-    overflow: auto!important;
+  height: 55%;
+  padding: 25px !important;
+  padding-top: 40px !important;
+  text-align:left;
+}
+
+.cardContent h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.cardContent p {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.cardContent span {
+  color: lightgray;
 }
 
 .flagDiv{
-    height: fit-content!important; 
-    min-height: 320px!important;
-    max-height: 320px!important; 
-    width:100%!important;
-    overflow: auto;
+  height: 45%;  
+  width: 100%;
+  overflow: hidden;
 }
 
-@media only screen and (max-width: 1300px) {
-    .flagDiv{
-        height: fit-content!important; 
-        min-height: 150px!important;
-        max-height: 150px!important; 
-        width:100%!important;
-        overflow: auto;
-    }
+.flagDiv img {
+  height: 100%;
+  width: 100%;
 }
 
-@media only screen and (max-width: 1300px) {
-    .cardContent{
-        min-height: 230px;
-        text-align:left;
-        height:fit-content!important;
-        width: 100%!important;
-        overflow: auto!important;
-    }
-}
+/* @media only screen and (max-width: 600px) {
+  
+  
+  .flagDiv{
+      height: fit-content!important; 
+      min-height: 150px!important;
+      max-height: 150px!important; 
+      width:100%!important;
+      overflow: auto;
+  }
+
+  .cardContent{
+      min-height: 230px;
+      height:fit-content!important;
+      width: 100%!important;
+      overflow: auto!important;
+  }
+} */

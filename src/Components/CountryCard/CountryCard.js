@@ -23,16 +23,16 @@ export default function CountryCard({ country }) {
           </div>
           <CardContent key={country.population} className={styles.cardContent}>
             <Typography gutterBottom variant="h5" component="h2">
-              <strong>{country.name}</strong>
+              {country.name}
             </Typography>
             <Typography variant="body2" color="white" component="p">
-              <strong>Population</strong>: {(country.population).toLocaleString()}
+              Population: <span>{(country.population).toLocaleString()}</span>
             </Typography>
             <Typography variant="body2" color="white" component="p">
-              <strong>Region</strong>: {country.region}
+              Region: <span>{country.region}</span>
             </Typography>
             <Typography variant="body2" color="white" component="p">
-              <strong>Capital</strong>: {country.capital}
+              Capital: <span>{country.capital}</span>
             </Typography>
           </CardContent>
         </CardActionArea>
