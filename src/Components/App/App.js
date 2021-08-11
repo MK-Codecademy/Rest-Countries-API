@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/Rest-Countries-API/:country">
             <CountryDetailPage /> 
           </Route>
-          <Route exact path="/example/example">
+          <Route exact path="/Rest-Countries-API/example/example">
             <Example /> 
           </Route>
         </Switch>
