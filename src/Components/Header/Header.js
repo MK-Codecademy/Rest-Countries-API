@@ -7,9 +7,6 @@ import { toggleDarkMode } from "../../features/darkModeSlice";
 import { useDispatch } from 'react-redux'
 import { changeTest } from "../../features/testSlice";
 
-import { useSelector, useDispatch } from 'react-redux'
-
-
 export default function Header() {
   const dispatch = useDispatch()
   const [darkMode, setDarkMode] = useState(true);
