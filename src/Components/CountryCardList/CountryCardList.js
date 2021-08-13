@@ -49,14 +49,19 @@ export default function CountryCardList({allCountries}) {
 
     if (sorting.value !== 'alphabetical') {
       displayCountries = sortArray(displayCountries, sorting.value);
+    } else {
+      displayCountries = displayCountries.sort((a, b) => {
+        if (removeAccents(a.name) < removeAccents(b.name)) { return -1 }
+        if (removeAccents(a.name) > removeAccents(b.name)) { return 1 }
+        return 0
+      });
     }
 
     setFilteredCountriesArray(displayCountries);
   },[filters, search, sorting, allCountries])
 
-  // <h2 className={styles.noCountries}>No countries could be found, please try another name!</h2>
 
-if (showSpinner) {
+  if (showSpinner) {
     return (
       <div className={styles.circular}>
         <CircularProgress size="10rem" />
