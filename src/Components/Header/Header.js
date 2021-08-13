@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 import "./Header.css";
 import { FaMoon, FaRegMoon } from "react-icons/fa";
 import { toggleDarkMode } from "../../features/darkModeSlice";
+
 import { useDispatch } from 'react-redux'
 import { changeTest } from "../../features/testSlice";
+
+import { useSelector, useDispatch } from 'react-redux'
+
 
 export default function Header() {
   const dispatch = useDispatch()
@@ -14,7 +18,6 @@ export default function Header() {
   const handleClick = () => {
     setDarkMode(!darkMode);
     dispatch(toggleDarkMode())
-    dispatch(changeTest('Testing'))
   };
 
   return (
